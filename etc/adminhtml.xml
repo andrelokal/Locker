@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+
+        <raiadrogasil translate="title" module="limelocker">
+            <title>RaiaDrogasil</title>
+            <sort_order>200</sort_order>
+            <children>
+                <raiadrogasil_limelocker translate="title">
+                    <title>Lime Locker</title>
+                    <sort_order>2</sort_order>
+                    <children>                        
+                        <servico>
+                            <title>Gerenciar Locker</title>
+                            <sort_order>10</sort_order>
+                            <action>limelocker/adminhtml_locker</action>
+                        </servico>
+
+                    </children>
+   
+                </raiadrogasil_limelocker>
+            </children>
+        </raiadrogasil>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <raiadrogasil>
+                        <children>
+                            <raiadrogasil_limelocker translate="title">
+                                <title>Lime Locker</title>
+                                <sort_order>170</sort_order>
+                                <children>
+                                        <servico translate="title">
+                                            <title>Configurações</title>
+                                            <sort_order>10</sort_order>
+                                        </servico>
+                                </children>
+                            </raiadrogasil_limelocker>
+                        </children>
+                    </raiadrogasil>
+
+                    
+                    <system>
+                        <children>
+						
+                            <config>
+                                <children>
+                                    <limelocker translate="title" module="limelocker">
+                                        <title>Lime Locker</title>
+                                    </limelocker>
+                                </children>
+                            </config>
+
+                        </children>
+                    </system>
+                                
+                                
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+</config>

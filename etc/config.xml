@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <RaiaDrogasil_LimeLocker>
+            <version>0.1.0</version>
+        </RaiaDrogasil_LimeLocker>
+    </modules>
+
+    <global>
+
+        <helpers>
+            <limelocker>
+                <class>RaiaDrogasil_LimeLocker_Helper</class>
+            </limelocker>
+        </helpers>
+
+        <blocks>
+            <limelocker>
+                <class>RaiaDrogasil_LimeLocker_Block</class>
+            </limelocker>
+        </blocks>
+
+        <models>
+            <limelocker>
+                <class>RaiaDrogasil_LimeLocker_Model</class>
+                <resourceModel>raiadrogasil_limelocker_resource</resourceModel>
+            </limelocker>
+            <raiadrogasil_limelocker_resource>
+                <class>RaiaDrogasil_LimeLocker_Model_Resource</class>
+                <entities>
+                    <locker>
+                        <table>raiadrogasil_limelocker_locker</table>
+                    </locker>
+                </entities>
+            </raiadrogasil_limelocker_resource>
+        </models>
+
+        <resources>
+            <raiadrogasil_locker_setup>
+                <setup>
+                    <module>RaiaDrogasil_LimeLocker</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </raiadrogasil_locker_setup>
+            <ura_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ura_write>
+            <ura_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ura_read>
+        </resources>
+
+        <events>
+            <checkout_type_onepage_save_order_after>
+                <observers>
+                    <lime_locker_handler>
+                        <class>RaiaDrogasil_LimeLocker_Model_Observer</class>
+                        <method>bookingLocker</method>
+                    </lime_locker_handler>
+                </observers>
+            </checkout_type_onepage_save_order_after>
+        </events>
+
+    </global>
+    <frontend>
+        <routers>
+            <raiadrogasil_limelocker>
+                <use>standard</use>
+                <args>
+                    <frontName>limelocker</frontName>
+                    <module>RaiaDrogasil_LimeLocker</module>
+                </args>
+            </raiadrogasil_limelocker>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <limelocker>
+                    <file>limelocker.xml</file>
+                </limelocker>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <raiadrogasil_limelocker>
+                <use>admin</use>
+                <args>
+                    <module>RaiaDrogasil_LimeLocker</module>
+                    <frontName>limelocker</frontName>
+                </args>
+            </raiadrogasil_limelocker>
+        </routers>
+    </admin>
+    <default>
+        <limelocker>
+            <service>
+                <period_prescription_in_days>2</period_prescription_in_days>
+                <length_box_locker>1</length_box_locker>
+                <number_attempts_retrieve_reservation>5</number_attempts_retrieve_reservation>
+            </service>
+        </limelocker>
+    </default>
+</config>

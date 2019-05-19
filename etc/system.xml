@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <raiadrogasil translate="label" module="imelocker">
+            <label>RaiaDrogasil</label>
+            <sort_order>250</sort_order>
+        </raiadrogasil>
+    </tabs>
+
+    <sections>
+        <limelocker translate="label" module="limelocker">
+            <label>Lime Locker</label>
+            <tab>raiadrogasil</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <service translate="label" module="limelocker">
+                    <label>Geral</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Ativar Lime Locker</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <mock translate="label">
+                            <label>Ativar Mock</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </mock>
+                        <api_url translate="label">
+                            <label>URL</label>
+                            <comment>URL de acesso a api de serviço</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_url>
+                        <api_user translate="label">
+                            <label>Usuario</label>
+                            <comment>usuario de acesso a api de serviço</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_user>
+                        <api_password translate="label">
+                            <label>Senha</label>
+                            <comment>Senha de acesso a api de serviço</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_password>
+                        <api_supplier_name translate="label">
+                            <label>Nome do Fornecedor</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </api_supplier_name>
+                        <period_prescription_in_days>
+                            <label>Prescrição</label>
+                            <comment>Quantidade de dias da prescrição da gaveta do locker</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </period_prescription_in_days>
+                        <length_box_locker>
+                            <label>Tamanho box locker</label>
+                            <comment>Tamanho do espaço a ser utilizado no locker</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </length_box_locker>
+                        <number_attempts_retrieve_reservation>
+                            <label>Número de tentativas envio reserva locker</label>
+                            <comment>Número de tentativas para pegar o número da reserva do locker e enviar na integraçao (Create) do Abacos.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </number_attempts_retrieve_reservation>
+                    </fields>
+                </service>
+            </groups>
+        </limelocker>
+    </sections>
+</config>
